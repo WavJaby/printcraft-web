@@ -1,0 +1,52 @@
+{
+  "release": "v0.2.1",
+  "archive": "https://github.com/storytold/pdfcraft/releases/download/v0.2.1/printcraft-web-0.2.1.zip",
+  "files": [
+    {
+      "path": "app/_headers",
+      "bytes": 326,
+      "sha256": "e3e253de74fb99a761fc91d4dec4b81ad6a1022b29c98761b5ac1e8ba5aff05a"
+    },
+    {
+      "path": "app/.htaccess",
+      "bytes": 495,
+      "sha256": "c92d61b428bff284fce08dc57f0255261476397f2cba5836c833974eded5c725"
+    },
+    {
+      "path": "app/HOSTING.md",
+      "bytes": 4258,
+      "sha256": "2face89d81a7bf88a761dda633e8f9f0bf263a08389087073bdeac15773f0bf2"
+    },
+    {
+      "path": "app/index.html",
+      "bytes": 1222,
+      "sha256": "c58a36db09826c0b61feed0f3d7f3e214c8ad95168c76eb9e2a3db4acea89d08"
+    },
+    {
+      "path": "app/LICENSE-APACHE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "app/LICENSE-MIT",
+      "bytes": 1102,
+      "sha256": "69ac7c5f9764178bcb794b53cb708062e789f5fe61275c7f348fd0c8688babd2"
+    },
+    {
+      "path": "app/printcraft-web-2cfdf9466196cdf9_bg.wasm",
+      "bytes": 37688990,
+      "sha256": "c519bc404c6a4389f9eb610d64034e4332f32b3d463a2b7fc9872b0b98c1d03a"
+    },
+    {
+      "path": "app/printcraft-web-2cfdf9466196cdf9.js",
+      "bytes": 159994,
+      "sha256": "15bcaee629bbf09c920c14580146dbd2f2c9cc7cd9073c23774309ec4219bfda"
+    },
+    {
+      "path": "app/README.md",
+      "bytes": 25329,
+      "sha256": "7cf1f1f1c1bb17a19ae89b56ca76883a8e80655a9d09598b8d5d10d062969ed8"
+    }
+  ],
+  "archiveSha256": "47cda2075ee79dbe8729b630f3bc559e6dd1bb37834ba5c592bcce50309a0a7f"
+}

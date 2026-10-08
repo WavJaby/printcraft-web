@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An unofficial browser experience of PrintCraft using the official WebAssembly module with a community bootstrap. PrintCraft is made by the ArtCraft Team and contributors.">
-  <title>PrintCraft · Unofficial browser experience</title>
+  <meta name="description" content="An unofficial browser experience of PdfCraft using the official WebAssembly module with a community bootstrap. PdfCraft is made by the ArtCraft Team and contributors.">
+  <title>PdfCraft · Unofficial browser experience</title>
   <link rel="stylesheet" href="./site.css">
   <script src="./delivery-config.js" defer></script>
   <script src="./site.js" defer></script>
@@ -12,14 +12,14 @@
 <body>
   <button id="toggle-toolbar" type="button" aria-controls="site-toolbar" aria-expanded="true" title="Collapse site toolbar">▴</button>
   <header class="toolbar" id="site-toolbar">
-    <div class="identity"><strong>PrintCraft</strong><span data-i18n="badge">Unofficial browser experience · v0.2.1</span></div>
+    <div class="identity"><strong>PdfCraft</strong><span data-i18n="badge">Unofficial browser experience · v0.4.0</span></div>
     <nav aria-label="Original project and site information" data-i18n-aria="navigation">
-      <a href="https://github.com/storytold/printcraft" target="_blank" rel="noopener noreferrer" data-i18n="source">Original GitHub ↗</a>
-      <a class="download" href="https://github.com/storytold/printcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a>
+      <a href="https://github.com/storytold/pdfcraft" target="_blank" rel="noopener noreferrer" data-i18n="source">Original GitHub ↗</a>
+      <a class="download" href="https://github.com/storytold/pdfcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a>
       <button id="show-notice" type="button" data-i18n="notice">About this experience</button>
     </nav>
   </header>
-  <main id="editor-container" aria-label="PrintCraft editor" data-i18n-aria="editor">
+  <main id="editor-container" aria-label="PdfCraft editor" data-i18n-aria="editor">
     <div id="mobile-controls">
       <label for="editor-scale" data-i18n="zoom">Editor zoom</label>
       <select id="editor-scale"><option value="auto" data-i18n="fit">Fit width</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option></select>
@@ -27,36 +27,36 @@
       <span class="note" data-i18n="rotate">Landscape works best</span>
     </div>
     <div id="editor-host"><p id="editor-placeholder" data-i18n="placeholder">Read the notice, then select “Start experience” to load the editor.</p></div>
-    <section id="host-loading" hidden aria-live="polite" aria-label="Loading PrintCraft">
+    <section id="host-loading" hidden aria-live="polite" aria-label="Loading PdfCraft">
       <div class="loading-card">
-        <h2 id="loading-title">Preparing PrintCraft…</h2>
+        <h2 id="loading-title">Preparing PdfCraft…</h2>
         <progress id="loading-progress" max="100" aria-label="Application download progress"></progress>
         <p id="loading-detail">Preparing the download…</p>
         <p id="loading-time" class="note"></p>
         <p id="loading-note" class="note">The first download is large. Keep this tab open; later visits can use a local cache.</p>
-        <div class="actions"><button id="retry-load" type="button" data-i18n="retry">Reload</button><a href="https://github.com/storytold/printcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a></div>
+        <div class="actions"><button id="retry-load" type="button" data-i18n="retry">Reload</button><a href="https://github.com/storytold/pdfcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a></div>
       </div>
     </section>
   </main>
-  <footer><span data-i18n="credit">PrintCraft by ArtCraft + contributors · Unofficial mirror · </span><a href="./app/NOTICE" target="_blank" rel="noopener" data-i18n="licenses">Licenses and credits</a></footer>
+  <footer><span data-i18n="credit">PdfCraft by ArtCraft + contributors · Unofficial mirror · </span><a href="./app/NOTICE" target="_blank" rel="noopener" data-i18n="licenses">Licenses and credits</a></footer>
   <dialog id="notice" aria-labelledby="notice-title">
     <form method="dialog">
       <p class="eyebrow">UNOFFICIAL COMMUNITY MIRROR</p>
-      <h1 id="notice-title" data-i18n="heading">An easier way to try PrintCraft</h1>
-      <p data-i18n="purpose">This site simply makes PrintCraft easier to try without installing it. PrintCraft is developed by the ArtCraft Team and contributors. This mirror is not operated or endorsed by them.</p>
-      <p><span data-i18n="build">You are loading the official v0.2.1 WebAssembly module with a community bootstrap. </span><strong data-i18n="parity">The web and desktop apps share an editing engine, but their features are not identical.</strong></p>
+      <h1 id="notice-title" data-i18n="heading">An easier way to try PdfCraft</h1>
+      <p data-i18n="purpose">This site simply makes PdfCraft easier to try without installing it. PdfCraft is developed by the ArtCraft Team and contributors. This mirror is not operated or endorsed by them.</p>
+      <p><span data-i18n="build">You are loading the official v0.4.0 WebAssembly module with a community bootstrap. </span><strong data-i18n="parity">The web and desktop apps share an editing engine, but their features are not identical.</strong></p>
       <ul>
         <li data-i18n="files">PDFs open through the browser picker; saving downloads a new file without overwriting the original. Some image insertion/replacement, attachment downloads and data imports are not wired up on the web.</li>
         <li data-i18n="persistence">Some preferences can persist, but desktop document crash recovery is not wired up. Download saves explicitly; do not rely on reloading to restore documents.</li>
         <li data-i18n="performance">WebGL2 is required. Large PDFs and heavy operations depend on browser memory. OCR text recognition is currently unavailable in this mirror.</li>
-        <li data-i18n="alpha">Browser restrictions do not imply the same restrictions on desktop. PrintCraft itself is still alpha; the desktop app is not guaranteed to have every feature complete.</li>
+        <li data-i18n="alpha">Browser restrictions do not imply the same restrictions on desktop. PdfCraft itself is still alpha; the desktop app is not guaranteed to have every feature complete.</li>
       </ul>
-      <p class="note" data-i18n="evidence">Based on the v0.2.1 source, not an exhaustive test of every editing feature. Keep backups and evaluate the official desktop app before production work.</p>
+      <p class="note" data-i18n="evidence">Based on the v0.4.0 source, not an exhaustive test of every editing feature. Keep backups and evaluate the official desktop app before production work.</p>
       <p id="storage-warning" class="note" hidden data-i18n="storage">Your browser blocks preference storage; this notice will return next visit.</p>
       <label class="remember"><input id="remember-notice" type="checkbox"><span data-i18n="remember">Don't remind me in this browser (reopen via “About this experience”)</span></label>
-      <div class="actions"><a href="https://github.com/storytold/printcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a><button id="start-editor" value="continue" autofocus data-i18n="start">Start experience</button></div>
+      <div class="actions"><a href="https://github.com/storytold/pdfcraft/releases/latest" target="_blank" rel="noopener noreferrer" data-i18n="download">Download official desktop app ↗</a><button id="start-editor" value="continue" autofocus data-i18n="start">Start experience</button></div>
     </form>
   </dialog>
-  <noscript>This experience requires JavaScript and WebAssembly. You can also <a href="https://github.com/storytold/printcraft/releases/latest">download the official desktop app</a>.</noscript>
+  <noscript>This experience requires JavaScript and WebAssembly. You can also <a href="https://github.com/storytold/pdfcraft/releases/latest">download the official desktop app</a>.</noscript>
 </body>
 </html>

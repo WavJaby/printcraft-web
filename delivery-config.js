@@ -1,9 +1,9 @@
 'use strict';
 globalThis.PRINTCRAFT_DELIVERY = Object.freeze({
-  "revision": "2cfdf9466196cdf9",
-  "wasmPath": "app/printcraft-web-2cfdf9466196cdf9_bg.wasm",
-  "wasmBytes": 37688990,
-  "wasmSha256": "c519bc404c6a4389f9eb610d64034e4332f32b3d463a2b7fc9872b0b98c1d03a",
+  "revision": "a5e9b1d863d1ae9b",
+  "wasmPath": "app/pdfcraft-web-a5e9b1d863d1ae9b_bg.wasm",
+  "wasmBytes": 34989773,
+  "wasmSha256": "6fe64959d572188ee33ab1ddbc13e1932bbfdaefe9b6ad934315e5d8f4930116",
   "partsManifest": null,
   "partBytes": 524288,
   "downloadConcurrency": 4,
@@ -14,8 +14,8 @@ globalThis.PRINTCRAFT_DELIVERY = Object.freeze({
   "slowNoticeSeconds": 30,
   "workerReadyTimeoutMs": 5000,
   "appId": "printcraft",
-  "version": "0.2.1",
-  "canvasId": "printcraft",
-  "jsPath": "app/printcraft-web-2cfdf9466196cdf9.js",
+  "version": "0.4.0",
+  "canvasId": "pdfcraft",
+  "jsPath": "app/pdfcraft-web-a5e9b1d863d1ae9b.js",
   "bootstrap": "trunk"
 });

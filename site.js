@@ -4,35 +4,35 @@ const preferredLanguage = navigator.languages?.[0] || navigator.language || 'en'
 const traditionalChinese = /^zh(?:-|$)/i.test(preferredLanguage);
 if (traditionalChinese) {
   const translations = {
-    badge: '非官方網頁體驗 · v0.2.1',
+    badge: '非官方網頁體驗 · v0.4.0',
     source: '原作 GitHub ↗',
     download: '下載官方桌面版 ↗',
     notice: '使用說明',
     placeholder: '閱讀說明後，按「開始體驗」載入編輯器。',
-    credit: '原作：ArtCraft + PrintCraft contributors · 非官方鏡像 · ',
+    credit: '原作：ArtCraft + PdfCraft contributors · 非官方鏡像 · ',
     licenses: '授權與署名',
-    heading: '更方便體驗 PrintCraft',
-    purpose: '本站只是讓大家不用安裝，就能體驗 PrintCraft 原作。軟體由 ArtCraft 團隊與貢獻者開發；本站非官方營運，未獲官方背書。',
-    build: '載入官方 v0.2.1 網頁成品，JavaScript／WASM 模組；本站使用獨立單頁啟動器。',
+    heading: '更方便體驗 PdfCraft',
+    purpose: '本站只是讓大家不用安裝，就能體驗 PdfCraft 原作。軟體由 ArtCraft 團隊與貢獻者開發；本站非官方營運，未獲官方背書。',
+    build: '載入官方 v0.4.0 網頁成品，JavaScript／WASM 模組；本站使用獨立單頁啟動器。',
     parity: '網頁版與桌面版共用編輯引擎，但功能並非完全相同。',
     files: 'PDF 由瀏覽器選取；儲存會下載新檔，不會覆寫原始檔案。部分圖片插入／替換、附件下載與資料匯入功能尚未接上網頁版。',
     persistence: '網頁版可保留部分偏好，但尚未接上桌面版的文件當機復原。請主動下載儲存；不要依賴重新整理後恢復文件。',
     performance: '需要支援 WebGL2。大型 PDF 與重運算受瀏覽器記憶體限制；此體驗站目前無法使用 OCR 文字辨識。',
-    alpha: '瀏覽器限制不代表桌面版也有相同限制；PrintCraft 本身仍在 alpha 階段，桌面版也不保證所有功能完整。',
-    evidence: '說明依 v0.2.1 原始碼核對，未逐項驗證所有編輯功能。正式工作前，請另存副本並試用官方桌面版。',
+    alpha: '瀏覽器限制不代表桌面版也有相同限制；PdfCraft 本身仍在 alpha 階段，桌面版也不保證所有功能完整。',
+    evidence: '說明依 v0.4.0 原始碼核對，未逐項驗證所有編輯功能。正式工作前，請另存副本並試用官方桌面版。',
     storage: '瀏覽器不允許儲存此偏好；下次開啟仍會顯示說明。',
     remember: '此瀏覽器不再提醒（仍可從「使用說明」重新開啟）',
     start: '開始體驗',
     navigation: '原作與站點資訊',
-    editor: 'PrintCraft 編輯器',
+    editor: 'PdfCraft 編輯器',
     retry: '重新載入',
     zoom: '編輯器縮放',
     fit: '自動寬度',
     rotate: '建議橫向使用',
   };
   document.documentElement.lang = 'zh-Hant';
-  document.title = 'PrintCraft · 非官方網頁體驗站';
-  document.querySelector('meta[name="description"]').content = 'PrintCraft 非官方網頁體驗站。使用官方 WebAssembly 模組與社群單頁啟動器；原作與所有貢獻歸 ArtCraft 團隊及貢獻者。';
+  document.title = 'PdfCraft · 非官方網頁體驗站';
+  document.querySelector('meta[name="description"]').content = 'PdfCraft 非官方網頁體驗站。使用官方 WebAssembly 模組與社群單頁啟動器；原作與所有貢獻歸 ArtCraft 團隊及貢獻者。';
   for (const element of document.querySelectorAll('[data-i18n]')) {
     element.textContent = translations[element.dataset.i18n];
   }
@@ -81,7 +81,7 @@ if (navigator.serviceWorker) navigator.serviceWorker.addEventListener('message',
   if (update?.type !== 'printcraft-download') return;
   if (update.state === 'receiving') {
     loading.dataset.transport = update.source;
-    loadingTitle.textContent = words('Downloading PrintCraft…', '正在下載 PrintCraft…');
+    loadingTitle.textContent = words('Downloading PdfCraft…', '正在下載 PdfCraft…');
     loadingProgress.value = Math.min(update.received / update.total * 100, 100);
     const mib = bytes => (bytes / (1024 * 1024)).toFixed(1);
     loadingDetail.textContent = `${mib(update.received)} / ${mib(update.total)} MiB · ${Math.floor(loadingProgress.value)}%`;
@@ -119,7 +119,7 @@ async function loadEditor() {
     loading.dataset.hardwareCheckFailures = String(Number(loading.dataset.hardwareCheckFailures || 0) + 1);
   });
   loading.hidden = false;
-  loadingTitle.textContent = words('Preparing PrintCraft…', '正在準備 PrintCraft…');
+  loadingTitle.textContent = words('Preparing PdfCraft…', '正在準備 PdfCraft…');
   loadingDetail.textContent = words('Preparing the download…', '正在準備下載…');
   loadingNote.textContent = words('The first download is large. Keep this tab open; later visits can use a local cache.', '首次下載檔案較大，請保持此分頁開啟；下次可使用本機快取。');
   let workerDeadline;

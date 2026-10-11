@@ -1,6 +1,6 @@
 # PdfCraft: unofficial browser experience
 
-Community mirror of the official PdfCraft v0.4.0 web build, intended to make it easier to try without installing. PdfCraft is made by ArtCraft Team + contributors; this mirror is not operated or endorsed by them.
+Community mirror of the official PdfCraft v0.6.0 web build, intended to make it easier to try without installing. PdfCraft is made by ArtCraft Team + contributors; this mirror is not operated or endorsed by them.
 
 [Original source](https://github.com/storytold/pdfcraft) · [Official website](https://getartcraft.com/apps/printcraft) · [Official desktop downloads](https://github.com/storytold/pdfcraft/releases/latest)
 
@@ -36,15 +36,15 @@ The upstream file picker queues bytes without requesting a repaint; pointer inpu
 
 ## Provenance and licenses
 
-Official release: https://github.com/storytold/pdfcraft/releases/tag/v0.4.0. The downloaded ZIP is checked against the release's `SHA256SUMS.txt`; extracted original files are recorded in `upstream-files.json` and verified during every build. Packaging and the independent host do not modify those files. This verifies consistency with the published release, not an independent author-signature chain.
+Official release: https://github.com/storytold/pdfcraft/releases/tag/v0.6.0. The downloaded ZIP is checked against the release's `SHA256SUMS.txt`; extracted original files are recorded in `upstream-files.json` and verified during every build. Packaging and the independent host do not modify those files. This verifies consistency with the published release, not an independent author-signature chain.
 
 PdfCraft is MIT OR Apache-2.0 at your option; preserve LICENSE-MIT, LICENSE-APACHE, [NOTICE](app/NOTICE), [ATTRIBUTION.md](app/ATTRIBUTION.md) and accompanying asset-license texts. Host code adapted from the PhotoCraft community mirror is MIT. ArtCraft marks have [separate terms](app/docs/brand/LICENSE-brand.txt); the host uses plain text attribution and no extracted brand logos. No complete transitive dependency-license audit is claimed.
 
 Validation: `node --test tests/*.test.cjs` checks delivery failures, retries, integrity, caching and the generated package. These are unit/selftest gates; separate isolated-browser checks cover actual PDF import/save, mobile layout and cold/warm startup.
 
-## Single-page hosting and updates
+## Embedded editor hosting and updates
 
-The community bootstrap in `app-loader.js` mounts the official canvas in the main document; no iframe is created. Original JS/Wasm are verified against `upstream-files.json`. The host, loader and layout are community code, not an official build or endorsement. Keep upstream copyright, licenses, NOTICE and third-party attributions; do not extract ArtCraft brand marks into the host.
+The community bootstrap in `app-loader.js` creates a same-origin `editor.html` iframe; `editor-bootstrap.js` starts the official canvas inside it. External scaling applies to the frame, so browser input coordinates remain in the editor's own viewport. The frame's canvas ResizeObserver reports CSS content size times current DPR while preserving native ResizeObserver entry/size types; other targets pass through. This aligns canvas pixels with eframe's input pixel basis during DPR emulation. Original JS/Wasm are verified against `upstream-files.json`. The host, loader and layout are community code, not an official build or endorsement. Keep upstream copyright, licenses, NOTICE and third-party attributions; do not extract ArtCraft brand marks into the host.
 
 Wasm and compressed parts are ignored. CI downloads the exact archive pinned by URL + SHA-256, restores the verified Wasm, generates a fresh Pages artifact, and deploys it without committing binaries. Browser asset caches retire prior Wasm hashes on service-worker activation. Existing Git history is not rewritten by this change.
 
